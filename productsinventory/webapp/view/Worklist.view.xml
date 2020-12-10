@@ -66,8 +66,14 @@
                         <Column id="nameColumn">
                             <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
                         </Column>
-                        <Column id="unitNumberColumn" hAlign="End">
+                        <Column id="unitNumberColumn">
                             <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>worklistTableUnitsOrderedColumnTitle}"/>
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>worklistTableUnitsInStockColumnTitle}"/>
                         </Column>
                     </columns>
 
@@ -84,6 +90,8 @@
                                         formatter: '.formatter.numberUnit'
                                     }"
                                     unit="{QuantityPerUnit}"/>
+                                <ObjectNumber number="{path: 'UnitsOnOrder', formatter: 'formatter.numberUnit'}" unit="PC"></ObjectNumber>
+                                <ObjectNumber number="{path: 'UnitsInStock', formatter: 'formatter.numberUnit'}" unit="PC"></ObjectNumber>
                             </cells>
                         </ColumnListItem>
                     </items>
